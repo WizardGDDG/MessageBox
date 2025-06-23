@@ -1,13 +1,46 @@
-<Window x:Class="WpfApp1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Начать" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Click="Button_Click" Width="86"/>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-    </Grid>
-</Window>
+namespace WpfApp1
+{
+    /// <summary>
+    /// Логика взаимодействия для Window1.xaml
+    /// </summary>
+    public partial class Window1 : Window
+    {
+        public Window1()
+        {
+            InitializeComponent();
+        }
+        int num = 0;
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Convert.ToString(num));
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+            Random random = new Random();
+            num++;
+            lab.Content = random.Next(1, 2000).ToString();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+            
+            lab.Content = random.Next(1, 2000).ToString();
+        }
+    }
+}
